@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>ダッシュボード | auth-demo</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body class="app">
+  <main class="wide" hidden>
+    <h1>ダッシュボード</h1>
+    <p id="greeting" class="muted"></p>
+    <p class="notice">これはダミーのダッシュボードです。ログイン後の画面イメージを確認するためのもので、「ダミー」と表示した数値や内容は実際のデータではありません。</p>
+
+    <section class="tiles" aria-label="サマリー">
+      <div class="tile">
+        <div class="tile-label">未読のお知らせ <span class="badge">ダミー</span></div>
+        <div class="tile-value">3</div>
+      </div>
+      <div class="tile">
+        <div class="tile-label">今月の利用回数 <span class="badge">ダミー</span></div>
+        <div class="tile-value">128</div>
+      </div>
+      <a class="tile tile-link" href="/account">
+        <div class="tile-label">登録済みのパスキー</div>
+        <div class="tile-value" id="pk-count">-</div>
+        <div class="tile-hint">パスキー管理へ →</div>
+      </a>
+    </section>
+
+
+  </main>
+  <script type="module" src="/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>パスキー管理 | auth-demo</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body class="app">
+  <main hidden>
+    <h1>パスキー管理</h1>
+    <p class="muted">別の端末でも使えるよう、2つ以上登録しておくことをおすすめします。</p>
+
+    <h2>登録済みのパスキー</h2>
+    <ul id="list" class="passkeys"></ul>
+    <button id="add-btn" type="button" class="primary">🔑 パスワード管理で追加する</button>
+    <div id="phone-add" hidden>
+      <button id="add-phone-btn" type="button" class="secondary">📱 QRコードで追加する</button>
+      <p class="muted">QRコードでの追加は Bluetooth をオンにしてください</p>
+    </div>
+    <p id="msg" class="msg" role="status"></p>
+  </main>
+  <script src="/vendor/simplewebauthn-browser.js"></script>
+  <script type="module" src="/account.js"></script>
+</body>
+</html>

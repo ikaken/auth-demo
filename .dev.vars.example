@@ -1,0 +1,5 @@
+# ローカル開発用。`cp .dev.vars.example .dev.vars` して使う(.dev.vars は git 管理しない)
+# wrangler.jsonc の vars を上書きする
+RP_ID=localhost
+ORIGIN=http://localhost:8787
+ADMIN_TOKEN=dev-admin-token-change-me

@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>ログイン | auth-demo</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main>
+    <h1>auth-demo</h1>
+    <p class="muted">招待されたメンバー専用のパスキー認証デモです。</p>
+
+    <form id="login-form">
+      <button id="login-btn" type="submit" class="primary">パスキーでログイン</button>
+    </form>
+    <p id="msg" class="msg" role="status"></p>
+
+    <p class="muted">初めて利用する方は、管理者から届いた招待リンクを開いてパスキーを登録してください。</p>
+  </main>
+  <script src="/vendor/simplewebauthn-browser.js"></script>
+  <script type="module" src="/login.js"></script>
+</body>
+</html>

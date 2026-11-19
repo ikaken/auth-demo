@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>パスキーの登録 | auth-demo</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main>
+    <h1>パスキーの登録</h1>
+    <p class="muted">招待リンクから、この端末にパスキーを登録します。パスワードは不要です。</p>
+    <p>登録後は、指紋・顔認証・端末の PIN などでログインできます。</p>
+    <button id="register-btn" type="button" class="primary">パスキーを登録する</button>
+    <p id="msg" class="msg" role="status"></p>
+    <p class="muted"><a href="/">ログイン画面へ</a></p>
+  </main>
+  <script src="/vendor/simplewebauthn-browser.js"></script>
+  <script type="module" src="/register.js"></script>
+</body>
+</html>

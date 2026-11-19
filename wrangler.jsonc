@@ -1,0 +1,36 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "auth-demo",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-11-01",
+
+  // 静的ファイル(public/)は Workers の assets 機能で配信し、/api/* だけ Worker で処理する
+  "assets": {
+    "directory": "./public",
+    "run_worker_first": ["/api/*"],
+    "not_found_handling": "404-page"
+  },
+
+  // 本番ドメイン。RP ID(パスキーの紐づけ先)と一致させること。後から変更するとパスキーが使えなくなる
+  "routes": [{ "pattern": "auth-demo.ikaken.com", "custom_domain": true }],
+
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "auth-demo",
+      // `wrangler d1 create auth-demo` で表示される ID に置き換える
+      "database_id": "42267b16-1fba-49d8-a5a7-d594fd8c1dcf",
+      "migrations_dir": "migrations"
+    }
+  ],
+
+  "vars": {
+    "RP_ID": "auth-demo.ikaken.com",
+    "RP_NAME": "auth-demo",
+    "ORIGIN": "https://auth-demo.ikaken.com",
+    "MAX_MEMBERS": "50",
+    "INVITE_TTL_HOURS": "48",
+    "SESSION_TTL_DAYS": "7"
+  }
+  // ADMIN_TOKEN は secret: `wrangler secret put ADMIN_TOKEN`
+}

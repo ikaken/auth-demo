@@ -1,0 +1,29 @@
+{
+  "name": "auth-demo",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "description": "Passkey (WebAuthn) demo for invited members only",
+  "scripts": {
+    "dev": "wrangler dev --port 8787 --local-upstream localhost:8787",
+    "deploy": "wrangler deploy",
+    "db:migrate:local": "wrangler d1 migrations apply auth-demo --local",
+    "db:migrate:remote": "wrangler d1 migrations apply auth-demo --remote",
+    "typecheck": "tsc --noEmit",
+    "test": "node --experimental-strip-types --test test/*.test.ts",
+    "vendor": "node scripts/copy-vendor.mjs",
+    "postinstall": "node scripts/copy-vendor.mjs"
+  },
+  "dependencies": {
+    "@simplewebauthn/browser": "^13.3.0",
+    "@simplewebauthn/server": "^13.3.0",
+    "hono": "^4.13.18"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.20261113.1",
+    "@types/node": "^26.6.6",
+    "typescript": "^5.9.0",
+    "wrangler": "^4.0.0"
+  }
+}

@@ -1,0 +1,8 @@
+node_modules/
+.wrangler/
+.dev.vars
+.env
+members.csv
+public/vendor/
+*.log
+.admin-token
