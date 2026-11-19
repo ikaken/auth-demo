@@ -57,7 +57,7 @@
 
 ### F2. 招待
 - F2-1 管理者は `active` なメンバーに対して招待リンクを発行できる。
-- F2-2 リンクは 1 回限り・有効期間 `INVITE_TTL_HOURS`(既定 48 時間)。
+- F2-2 リンクは 1 回限り・有効期間 `INVITE_TTL_HOURS`(既定 120 時間 = 5 日)。
 - F2-3 同じメンバーへの再発行で、以前の未使用リンクは無効になる(メンバーごとに有効な招待は常に 1 つ)。
 - F2-4 パスキー未登録の `active` メンバー全員分を一括発行できる(`invite:pending`)。
 - F2-5 パスキーを紛失したメンバーの復旧は、招待の再発行 → 新端末での登録で行う。
@@ -188,7 +188,7 @@
 | `RP_NAME` | `auth-demo` | var | 認証器に表示される名前 |
 | `ORIGIN` | `https://auth-demo.ikaken.com` | var | 期待するオリジン |
 | `MAX_MEMBERS` | 50 | var | 許可リスト上限 |
-| `INVITE_TTL_HOURS` | 48 | var | 招待の有効時間 |
+| `INVITE_TTL_HOURS` | 120 | var | 招待の有効時間 |
 | `SESSION_TTL_DAYS` | 7 | var | セッションの有効日数 |
 | `ADMIN_TOKEN` | なし | secret | 管理 API の Bearer トークン |
 

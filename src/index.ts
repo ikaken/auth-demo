@@ -402,7 +402,7 @@ app.post('/api/admin/invites', async (c) => {
   const member = await c.var.db.findMemberByEmail(email);
   if (!member || member.status !== 'active') return c.json({ error: 'not_found' }, 404);
   const token = randomToken(32);
-  const expiresAt = now() + num(c.env.INVITE_TTL_HOURS, 48) * 3600;
+  const expiresAt = now() + num(c.env.INVITE_TTL_HOURS, 120) * 3600;
   await c.var.db.replaceInvite(await sha256Hex(token), member.id, now(), expiresAt);
   // トークンは URL フラグメントに入れる (サーバーログやリファラーに残らない)
   return c.json({ email, url: `${c.env.ORIGIN}/register.html#token=${token}`, expiresAt });

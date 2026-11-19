@@ -29,7 +29,7 @@
     "RP_NAME": "auth-demo",
     "ORIGIN": "https://auth-demo.ikaken.com",
     "MAX_MEMBERS": "50",
-    "INVITE_TTL_HOURS": "48",
+    "INVITE_TTL_HOURS": "120",
     "SESSION_TTL_DAYS": "7"
   }
   // ADMIN_TOKEN は secret: `wrangler secret put ADMIN_TOKEN`
